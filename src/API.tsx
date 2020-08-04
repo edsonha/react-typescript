@@ -1,3 +1,15 @@
+export type Question = {
+  category: string;
+  correct_answer: string;
+  difficulty: string;
+  incorrect_answers: string[];
+  question: string;
+  type: string;
+};
+
+// To create an array of incorrect and correct answer
+export type QuestionsState = Question & { answers: string[] };
+
 export enum Difficulty {
   EASY = "easy",
   MEDIUM = "medium",
