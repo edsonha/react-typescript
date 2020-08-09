@@ -39,7 +39,7 @@ const App = () => {
     setLoading(false);
   };
 
-  const checkAnswer = (e: any) => {
+  const checkAnswer = (e: React.MouseEvent<HTMLButtonElement>) => {
     if (!gameOver) {
       // User's answer
       const answer = e.currentTarget.value;
@@ -58,7 +58,16 @@ const App = () => {
     }
   };
 
-  const nextQuestion = () => console.log("Go to next question");
+  const nextQuestion = () => {
+    // Move on to the next question if not the last question
+    const nextQ = number + 1;
+
+    if (nextQ === TOTAL_QUESTIONS) {
+      setGameOver(true);
+    } else {
+      setNumber(nextQ);
+    }
+  };
 
   return (
     <div>
