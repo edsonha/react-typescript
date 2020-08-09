@@ -10,7 +10,7 @@ export type Question = {
 };
 
 // To create an array of incorrect and correct answer
-export type QuestionsState = Question & { answers: string[] };
+export type QuestionState = Question & { answers: string[] };
 
 export enum Difficulty {
   EASY = "easy",
@@ -26,7 +26,7 @@ export const fetchQuizQuestions = async (
   const data = await (await fetch(endpoint)).json(); // await for fetch and await for conversion to json
   return data.results.map((question: Question) => ({
     ...question,
-    answer: shuffleArray([
+    answers: shuffleArray([
       ...question.incorrect_answers,
       question.correct_answer,
     ]),
