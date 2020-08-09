@@ -2,8 +2,7 @@ import React, { useState } from "react";
 
 import QuestionCard from "./components/QuestionCard";
 
-import { fetchQuizQuestions } from "./API";
-import { Difficulty, QuestionState } from "./API";
+import { fetchQuizQuestions, Difficulty, QuestionState } from "./API";
 
 import { GlobalStyle, Wrapper } from "./App.styles";
 
@@ -22,8 +21,6 @@ const App = () => {
   const [userAnswers, setUserAnswers] = useState<AnswerObject[]>([]);
   const [score, setScore] = useState(0);
   const [gameOver, setGameOver] = useState(true);
-
-  console.log(questions);
 
   const startTrivia = async () => {
     setLoading(true);
