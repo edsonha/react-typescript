@@ -24,6 +24,8 @@ const App = () => {
         Start
       </button>
       <p className="score">Score: </p>
+      <hr />
+      <button></button>
       <p>Loading Questions...</p>
       {/* <QuestionCard
         questionNr={number + 1}
